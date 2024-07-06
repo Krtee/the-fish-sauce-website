@@ -1,0 +1,16 @@
+{
+    "header": {
+        "title": "This is not a fish restaurant",
+        "content": "Fischsoße ist in Vietnam mehr als nur ein Würzmittel. Sie ist ein kulinarischer Eckpfeiler, ein Symbol der Tradition und ein Geschmacksverstärker wie kein anderer. Eingebettet in das kulinarische Erbe des Landes sind ihre Herstellung und ihr Verzehr Rituale, die von Generation zu Generation weitergegeben werden und Fischsauce nicht nur zu einer Zutat, sondern zu einer kulturellen Ikone machen, die die Seele der vietnamesischen Küche ausmacht."
+    },
+    "menu": {
+        "title": "Craving Street Food?",
+        "lunch": "Mittagsmenü",
+        "dinner": "Abendkarte",
+        "drinks": "Getränkekarte"
+    },
+    "footer": {
+        "openingHours": "Öffnungszeiten",
+        "copyright": "Copyright © 2022. Alle Rechte vorbehalten."
+    }
+}
