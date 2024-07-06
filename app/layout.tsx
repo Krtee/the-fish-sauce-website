@@ -19,15 +19,13 @@ export const RootLayout: React.FC<{
 }> = ({ params: { locale }, children }) => {
   return (
     <html lang="de">
-      <TranslationsProvider namespaces={["common"]} locale={locale}>
-        <body className={inter.className}>
-          <Suspense>
-            <Navigation />
-            {children}
-            <Footer lang={locale} />
-          </Suspense>
-        </body>
-      </TranslationsProvider>
+      <body className={inter.className}>
+        <TranslationsProvider namespaces={["common"]} locale={locale}>
+          <Navigation />
+          {children}
+          <Footer lang={locale} />
+        </TranslationsProvider>
+      </body>
     </html>
   );
 };
