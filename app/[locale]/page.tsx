@@ -72,7 +72,6 @@ const Home: React.FC<{ params: { lang: string } }> = async ({
             </button>
           </div>
         </div>
-        <Footer lang={lang} />
       </div>
     </main>
   );

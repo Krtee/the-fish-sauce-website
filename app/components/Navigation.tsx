@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import MenuIcon from "../../public/images/menu.svg";
 import Logo from "./../../public/logo.svg";
+import { motion } from "framer-motion";
 
 export interface NavigationProps {
   children?: React.ReactNode;
@@ -45,11 +46,18 @@ const Navigation: React.FC<NavigationProps> = () => {
         <MenuIcon onClick={() => showSidebar()} color="white" />
       </div>
 
-      <div>
+      <motion.div
+        layout
+        initial={{ borderRadius: 70 }}
+        className={`menu-container bg-fish-beige 	 ${
+          isOpen ? "w-6/5 h-6/5 bg-pink" : " w-px h-px"
+        }  `}
+        transition={{ duration: 0.5 }}
+      >
         <div onClick={() => sideDrawerClosedHandler()} className="p-30">
           <p>{t("menu.title")}</p>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
