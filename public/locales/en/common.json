@@ -4,7 +4,7 @@
         "content": "Fish sauce is more than just a condiment in Vietnam. It is a culinary cornerstone, a symbol of tradition and a flavor enhancer like no other. Embedded in the country's culinary heritage, its production and consumption are rituals passed down from generation to generation, making fish sauce not just an ingredient, but a cultural icon that is the soul of Vietnamese cuisine."
     },
     "menu": {
-        "title": "Craving Street Food?",
+        "title": "Craving Street Food",
         "lunch": "Lunch menu",
         "dinner": "Evening menu",
         "drinks": "Drinks menu"
@@ -12,5 +12,8 @@
     "footer": {
         "openingHours": "Opening hours",
         "copyright": "Copyright © 2022. All rights reserved."
+    },
+    "nav": {
+        "contact": "Contact"
     }
 }

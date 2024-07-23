@@ -8,18 +8,35 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  overflow-x: hidden
 }
 
 @font-face {
   font-family: "Termina";
   src: local("Termina"),
     url("./../resources/termina/Termina-Black.otf") format("opentype");
+
+}
+
+@font-face {
+  font-family: "Walkway";
+  src: local("Walkway"),
+    url("./../resources/walkway/Walkway-Black.ttf") format("truetype");
+
+}
+@font-face {
+  font-family: "Kanit";
+  src: local("Kanit"),
+    url("./../resources/Kanit/Kanit-Black.ttf") format("truetype");
+
 }
 
 @font-face {
   font-family: "work-sans";
   src: url("./../resources/work-sans/WorkSans-VariableFont_wght.ttf")
     format("truetype");
+  unicode-range: U+20-21, U+3F, U+41-5A, U+61-7A,U+003F;
+
 }
 
 @media (prefers-color-scheme: dark) {
@@ -34,6 +51,12 @@ body {
   background: #122e27;
 }
 
+.text-kanit {
+  font-family: "Kanit";
+}
+.text-walkway {
+  font-family: "Walkway";
+}
 .text-termina {
   font-family: "Termina";
 }
@@ -47,9 +70,45 @@ body {
   }
 }
 
-.menu-container {
-  z-index: 100;
+.nav-container {
+  z-index: 10;
   position: fixed;
-  top: -10%;
-  right: -10%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width:400px;
+}
+
+
+.nav-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 400px;
+  transition: background-color 300ms ease-in-out;
+
+ 
+}
+
+.menu-toggle{
+  z-index: 100;
+  outline: none;
+  border: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  cursor: pointer;
+  position: fixed;
+  top: 6px;
+  left: calc(100% - 54px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  border-radius: 50%;
 }

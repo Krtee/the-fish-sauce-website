@@ -2,12 +2,12 @@ import React from "react";
 import initTranslations from "../i18n";
 
 export interface FooterProps {
-  lang: string;
+  locale: string;
   children?: React.ReactNode;
 }
 
-const Footer: React.FC<FooterProps> = async ({ lang }) => {
-  const { t } = await initTranslations(lang, ["common"]);
+const Footer: React.FC<FooterProps> = async ({ locale }) => {
+  const { t } = await initTranslations(locale, ["common"]);
 
   return (
     <div className="bg-fish-green flex flex-row p-8 w-full">

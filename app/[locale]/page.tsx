@@ -1,28 +1,21 @@
 import Image from "next/image";
-import Footer from "../components/Footer";
+import Link from "next/link";
+import FishSauceStick from "../../public/images/fish_sauce_stick.svg";
+import PlasticStoolStick from "../../public/images/plastic_stool_stick.svg";
+import SpicesStick from "../../public/images/spices_stick.svg";
+import Banner from "../components/Banner";
+import StickWiggler from "../components/StickWiggler";
 import initTranslations from "../i18n";
 
-const Home: React.FC<{ params: { lang: string } }> = async ({
-  params: { lang },
+const Home: React.FC<{ params: { locale: string } }> = async ({
+  params: { locale },
 }) => {
-  const { t } = await initTranslations(lang, ["common"]);
-  console.log("yess", lang);
+  const { t } = await initTranslations(locale, ["common"]);
 
   return (
     <main className="flex min-h-screen flex-col items-center ">
       <div className="relative flex flex-col place-items-center w-full ">
-        <div className=" relative w-full  pt-40 pb-52 h-screen">
-          <div className="relative h-full">
-            <Image
-              className="relative "
-              src="/images/header.png"
-              alt="Next.js Logo"
-              fill
-              sizes="100vw"
-              objectFit="cover"
-            />
-          </div>
-        </div>
+        <Banner />
 
         <div className="relative flex flex-col bg-fish-beige text-fish-green ">
           <div className="relative flex-2 p-8 ">
@@ -41,19 +34,41 @@ const Home: React.FC<{ params: { lang: string } }> = async ({
               style={{ width: "100%", height: "auto" }}
             />
           </div>
+          <StickWiggler className="absolute -right-1 top-[450px] w-40">
+            <FishSauceStick alt="Fish Sauce Stick" />
+          </StickWiggler>
+          <StickWiggler className="absolute -right-1 top-[550px] w-40" reverse>
+            <PlasticStoolStick alt="Plastic Stool Stick" />
+          </StickWiggler>
+          <StickWiggler className="absolute -right-1 top-[650px] w-40">
+            <SpicesStick alt="Spices Stick" />
+          </StickWiggler>
         </div>
 
-        <div className="bg-fish-brown p-8">
-          <h1 className="text-2xl text-termina py-4">{t("menu.title")}</h1>
-          <p className="text-lg text-work-sans py-4 border-t-2 ">
+        <div className="bg-fish-brown p-8 w-full">
+          <div className="flex flex-row">
+            <h1 className="text-2xl text-termina py-4">{t("menu.title")}</h1>
+            <h1 className="text-2xl text-kanit py-4">?</h1>
+          </div>
+
+          <Link
+            className="text-lg text-work-sans py-4 border-t-2 block"
+            href={"/lunch"}
+          >
             {t("menu.lunch")}
-          </p>
-          <p className="text-lg text-work-sans py-4 border-t-2 ">
+          </Link>
+          <Link
+            className="text-lg text-work-sans py-4 border-t-2 block"
+            href={"/dinner"}
+          >
             {t("menu.dinner")}
-          </p>
-          <p className="text-lg text-work-sans py-4 border-t-2 border-b-2">
+          </Link>
+          <Link
+            className="text-lg text-work-sans py-4 border-t-2 border-b-2 block"
+            href={"/drinks"}
+          >
             {t("menu.drinks")}
-          </p>
+          </Link>
         </div>
         <div className="relative w-full p-8 bg-fish-beige">
           <Image

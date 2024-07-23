@@ -1,10 +1,10 @@
 import { Metadata } from "next";
-import "./globals.scss";
-import { TranslationsProvider } from "./components/TranslationsProvider";
-import Navigation from "./components/Navigation";
 import { Inter } from "next/font/google";
 import { Suspense } from "react";
-import Footer from "./components/Footer";
+import Footer from "../components/Footer";
+import Navigation from "../components/Navigation";
+import { TranslationsProvider } from "../components/TranslationsProvider";
+import "./../globals.scss";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description: "The Fish Sauce",
 };
 
-export const RootLayout: React.FC<{
+const RootLayout: React.FC<{
   children: React.ReactNode;
   params: { locale: string };
 }> = ({ params: { locale }, children }) => {
@@ -21,9 +21,11 @@ export const RootLayout: React.FC<{
     <html lang="de">
       <body className={inter.className}>
         <TranslationsProvider namespaces={["common"]} locale={locale}>
-          <Navigation />
-          {children}
-          <Footer lang={locale} />
+          <Suspense>
+            <Navigation />
+            {children}
+          </Suspense>
+          <Footer locale={locale} />
         </TranslationsProvider>
       </body>
     </html>

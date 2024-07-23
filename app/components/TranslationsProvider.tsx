@@ -9,7 +9,7 @@ export const TranslationsProvider: React.FC<{
   locale: string;
   namespaces?: string[];
   resources?: any;
-}> = async ({
+}> = ({
   children,
   locale = "de",
   namespaces = ["common"],
@@ -17,7 +17,7 @@ export const TranslationsProvider: React.FC<{
 }) => {
   const i18n = createInstance();
 
-  await initTranslations(locale, namespaces, i18n, resources);
+  initTranslations(locale, namespaces, i18n, resources);
 
   return <I18nextProvider i18n={i18n}>{children}</I18nextProvider>;
 };
